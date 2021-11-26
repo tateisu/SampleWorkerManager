@@ -24,12 +24,15 @@ class ActMain : AppCompatActivity() {
                     btnAdd.setOnClickListener { performAdd() }
                 }.root
         )
+
+        // 処理キューが中断されていたら再開したい
+        ItemWorker.enqueue(this, lifecycleScope)
     }
 
     private fun performAdd() {
         lifecycleScope.launch {
             globalState.db.itemDao().upsert(RItem())
-            ItemWorker.enqueue(applicationContext)
+            ItemWorker.enqueue(this@ActMain, lifecycleScope)
         }
     }
 

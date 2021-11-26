@@ -4,7 +4,7 @@ import android.util.Log
 
 class LogTag(private val prefix: String) {
     companion object {
-        const val tag = "SampleIntentService"
+        const val tag = "SampleWorkerManager"
     }
 
     fun v(msg: String) = Log.v(tag, "$prefix: $msg")

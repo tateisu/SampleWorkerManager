@@ -71,7 +71,7 @@ data class RItem(
     }
 
     override fun toString() =
-        if (status == Status.Uploading.code && startToken != globalState.instanceToken) {
+        if (status == Status.Uploading.code && startToken != ItemWorker.instanceToken) {
             """
             id=$id, 
             status=${

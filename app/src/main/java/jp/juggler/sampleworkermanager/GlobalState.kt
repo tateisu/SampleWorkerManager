@@ -35,6 +35,4 @@ class GlobalState(var appContext: Context) {
     }
 
     val db = AppDatabase.open(appContext)
-
-    val instanceToken = "${System.currentTimeMillis()}:${android.os.Process.myPid()}"
 }
